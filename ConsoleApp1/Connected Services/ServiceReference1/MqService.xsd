@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PARequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FerIdSpeciality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdLpu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNsiLpu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSpeciality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameDoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameSpeciality" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PARequest" nillable="true" type="tns:PARequest" />
+  <xs:complexType name="PARequestInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Claim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Info" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PARequestInfo" nillable="true" type="tns:PARequestInfo" />
+  <xs:complexType name="PARequestPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPatient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARequestPatientContacts" nillable="true" type="tns:PARequestPatientContacts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PARequestPatient" nillable="true" type="tns:PARequestPatient" />
+  <xs:complexType name="PARequestPatientContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PARequestPatientContacts" nillable="true" type="tns:PARequestPatientContacts" />
+  <xs:complexType name="ArrayOfPARequestInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PARequestInterval" nillable="true" type="tns:PARequestInterval" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPARequestInterval" nillable="true" type="tns:ArrayOfPARequestInterval" />
+  <xs:complexType name="PARequestInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PARequestInterval" nillable="true" type="tns:PARequestInterval" />
+  <xs:complexType name="ArrayOfActivePARequestInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivePARequestInfo" nillable="true" type="tns:ActivePARequestInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActivePARequestInfo" nillable="true" type="tns:ArrayOfActivePARequestInfo" />
+  <xs:complexType name="ActivePARequestInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdPar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARequest" nillable="true" type="tns:PARequest" />
+      <xs:element minOccurs="0" name="PARequestInfo" nillable="true" type="tns:PARequestInfo" />
+      <xs:element minOccurs="0" name="PARequestPatient" nillable="true" type="tns:PARequestPatient" />
+      <xs:element minOccurs="0" name="PASourceCreated" type="xs:int" />
+      <xs:element minOccurs="0" name="PreferredIntervals" nillable="true" type="tns:ArrayOfPARequestInterval" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActivePARequestInfo" nillable="true" type="tns:ActivePARequestInfo" />
+  <xs:complexType name="ArrayOfSearchPARequestInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchPARequestInfo" nillable="true" type="tns:SearchPARequestInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchPARequestInfo" nillable="true" type="tns:ArrayOfSearchPARequestInfo" />
+  <xs:complexType name="SearchPARequestInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ActivePARequestInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PARequestDeactivationInfo" nillable="true" type="tns:PARequestDeactivationInfo" />
+          <xs:element minOccurs="0" name="PARequestStatus" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchPARequestInfo" nillable="true" type="tns:SearchPARequestInfo" />
+  <xs:complexType name="PARequestDeactivationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeactivationComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeactivationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeactivationReason" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LinkedIdPar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASourceDeactivated" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PARequestDeactivationInfo" nillable="true" type="tns:PARequestDeactivationInfo" />
+</xs:schema>

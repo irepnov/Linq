@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MQ.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MQ.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Credentials">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Organization" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Credentials" nillable="true" type="tns:Credentials" />
+  <xs:complexType name="ProfileMedService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdProfileMedService" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="Site" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfileMedService" nillable="true" type="tns:ProfileMedService" />
+  <xs:complexType name="Coding">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="System" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Coding" nillable="true" type="tns:Coding" />
+  <xs:complexType name="Referral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventsInfo" nillable="true" type="tns:EventsInfo" />
+      <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:Patient" />
+      <xs:element minOccurs="0" name="ReferralInfo" nillable="true" type="tns:ReferralInfo" />
+      <xs:element minOccurs="0" name="ReferralSurvey" nillable="true" type="tns:Survey" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:ReferralSource" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="tns:ReferralTarget" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Referral" nillable="true" type="tns:Referral" />
+  <xs:complexType name="EventsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cancellation" nillable="true" type="tns:CancellationData" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:EventSource" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="tns:EventTarget" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventsInfo" nillable="true" type="tns:EventsInfo" />
+  <xs:complexType name="CancellationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CancellationReason" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="CancellationSource" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReasonComment" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancellationData" nillable="true" type="tns:CancellationData" />
+  <xs:complexType name="EventSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsReferralReviewed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PlannedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReferralCreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReferralOutDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReferralReviewDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventSource" nillable="true" type="tns:EventSource" />
+  <xs:complexType name="EventTarget">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaseAidForm" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="CaseAidPlace" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="CaseAidType" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="CaseCloseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CaseOpenDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsReferralReviwed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lpu" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="ReceptionAppointComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceptionAppointDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReceptionAppointTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferralReviewDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RefferalCreatedDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventTarget" nillable="true" type="tns:EventTarget" />
+  <xs:complexType name="Patient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddressDto" />
+      <xs:element minOccurs="0" name="ContactDtos" nillable="true" type="tns:ArrayOfContactDto" />
+      <xs:element minOccurs="0" name="Documents" nillable="true" type="tns:ArrayOfDocumentDto" />
+      <xs:element minOccurs="0" name="Jobs" nillable="true" type="tns:ArrayOfJob" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="Privileges" nillable="true" type="tns:ArrayOfPrivilege" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Patient" nillable="true" type="tns:Patient" />
+  <xs:complexType name="ArrayOfAddressDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressDto" nillable="true" type="tns:AddressDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressDto" nillable="true" type="tns:ArrayOfAddressDto" />
+  <xs:complexType name="AddressDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressType" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="StringAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDto" nillable="true" type="tns:AddressDto" />
+  <xs:complexType name="ArrayOfContactDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactDto" nillable="true" type="tns:ContactDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactDto" nillable="true" type="tns:ArrayOfContactDto" />
+  <xs:complexType name="ContactDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactType" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="ContactValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactDto" nillable="true" type="tns:ContactDto" />
+  <xs:complexType name="ArrayOfDocumentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentDto" nillable="true" type="tns:DocumentDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentDto" nillable="true" type="tns:ArrayOfDocumentDto" />
+  <xs:complexType name="DocumentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="ExpiredDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssuedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Provider" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="ProviderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionCode" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentDto" nillable="true" type="tns:DocumentDto" />
+  <xs:complexType name="ArrayOfJob">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Job" nillable="true" type="tns:Job" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJob" nillable="true" type="tns:ArrayOfJob" />
+  <xs:complexType name="Job">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Job" nillable="true" type="tns:Job" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HumanName" nillable="true" type="tns:HumanName" />
+      <xs:element minOccurs="0" name="IdPatientMis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPersonMis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="HumanName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FamilyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HumanName" nillable="true" type="tns:HumanName" />
+  <xs:complexType name="ArrayOfPrivilege">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Privilege" nillable="true" type="tns:Privilege" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrivilege" nillable="true" type="tns:ArrayOfPrivilege" />
+  <xs:complexType name="Privilege">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PrivilegeType" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Privilege" nillable="true" type="tns:Privilege" />
+  <xs:complexType name="ReferralInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cancellation" nillable="true" type="tns:CancellationData" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdMq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdTfoms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MqReferralStatus" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileMedService" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferralType" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralInfo" nillable="true" type="tns:ReferralInfo" />
+  <xs:complexType name="Survey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Additional" nillable="true" type="tns:Additional" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurveyOrgan" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="SurveyType" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Survey" nillable="true" type="tns:Survey" />
+  <xs:complexType name="Additional">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllergyIodine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraData" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Additional" nillable="true" type="tns:Additional" />
+  <xs:complexType name="ReferralSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Doctors" nillable="true" type="tns:ArrayOfDoctor" />
+      <xs:element minOccurs="0" name="IdCaseMis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdReferralMis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lpu" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="MainDiagnosis" nillable="true" type="tns:ArrayOfMainDiagnosis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralSource" nillable="true" type="tns:ReferralSource" />
+  <xs:complexType name="ArrayOfDoctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Doctor" nillable="true" type="tns:Doctor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDoctor" nillable="true" type="tns:ArrayOfDoctor" />
+  <xs:complexType name="Doctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactDtos" nillable="true" type="tns:ArrayOfContactDto" />
+      <xs:element minOccurs="0" name="Lpu" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="Speciality" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Doctor" nillable="true" type="tns:Doctor" />
+  <xs:complexType name="ArrayOfMainDiagnosis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MainDiagnosis" nillable="true" type="tns:MainDiagnosis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMainDiagnosis" nillable="true" type="tns:ArrayOfMainDiagnosis" />
+  <xs:complexType name="MainDiagnosis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComplicationDiagnosis" nillable="true" type="tns:ArrayOfDiagnosisInfo" />
+      <xs:element minOccurs="0" name="DiagnosisInfo" nillable="true" type="tns:DiagnosisInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MainDiagnosis" nillable="true" type="tns:MainDiagnosis" />
+  <xs:complexType name="ArrayOfDiagnosisInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DiagnosisInfo" nillable="true" type="tns:DiagnosisInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiagnosisInfo" nillable="true" type="tns:ArrayOfDiagnosisInfo" />
+  <xs:complexType name="DiagnosisInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiagnosedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DiagnosisType" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="MkbCode" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiagnosisInfo" nillable="true" type="tns:DiagnosisInfo" />
+  <xs:complexType name="ReferralTarget">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Doctors" nillable="true" type="tns:ArrayOfDoctor" />
+      <xs:element minOccurs="0" name="IdCaseMis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReferralReviewed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lpu" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="MainDiagnosis" nillable="true" type="tns:ArrayOfMainDiagnosis" />
+      <xs:element minOccurs="0" name="ReceptionAppointComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceptionAppointDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReceptionAppointTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferralReviewDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralTarget" nillable="true" type="tns:ReferralTarget" />
+  <xs:complexType name="Options">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateReport" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventsInfo" nillable="true" type="tns:EventsInfo" />
+      <xs:element minOccurs="0" name="IdMq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:Patient" />
+      <xs:element minOccurs="0" name="ReferralInfo" nillable="true" type="tns:ReferralInfo" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:ReferralSource" />
+      <xs:element minOccurs="0" name="Survey" nillable="true" type="tns:Survey" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="tns:ReferralTarget" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Options" nillable="true" type="tns:Options" />
+  <xs:complexType name="ArrayOfReferral">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Referral" nillable="true" type="tns:Referral" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferral" nillable="true" type="tns:ArrayOfReferral" />
+  <xs:complexType name="ReferralResultDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Header" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MimeType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralResultDocument" nillable="true" type="tns:ReferralResultDocument" />
+  <xs:complexType name="AppointmentNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdAppointment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdLpu" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPat" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppointmentNotification" nillable="true" type="tns:AppointmentNotification" />
+  <xs:complexType name="SearchNewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:PatientSearchNewFilter" />
+      <xs:element minOccurs="0" name="ReferralInfo" nillable="true" type="tns:ReferralInfoSearchNewFilter" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:ReferralSourceSearchNewFilter" />
+      <xs:element minOccurs="0" name="Survey" nillable="true" type="tns:SurveySearchNewFilter" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="tns:ReferralTargetSearchNewFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchNewFilter" nillable="true" type="tns:SearchNewFilter" />
+  <xs:complexType name="PatientSearchNewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:PersonSearchNewFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientSearchNewFilter" nillable="true" type="tns:PatientSearchNewFilter" />
+  <xs:complexType name="PersonSearchNewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdPatientMis" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonSearchNewFilter" nillable="true" type="tns:PersonSearchNewFilter" />
+  <xs:complexType name="ReferralInfoSearchNewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MqReferralStatus" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="ProfileMedService" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="ReferralType" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralInfoSearchNewFilter" nillable="true" type="tns:ReferralInfoSearchNewFilter" />
+  <xs:complexType name="ReferralSourceSearchNewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lpu" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralSourceSearchNewFilter" nillable="true" type="tns:ReferralSourceSearchNewFilter" />
+  <xs:complexType name="SurveySearchNewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SurveyOrgan" nillable="true" type="tns:Coding" />
+      <xs:element minOccurs="0" name="SurveyType" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SurveySearchNewFilter" nillable="true" type="tns:SurveySearchNewFilter" />
+  <xs:complexType name="ReferralTargetSearchNewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lpu" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralTargetSearchNewFilter" nillable="true" type="tns:ReferralTargetSearchNewFilter" />
+  <xs:complexType name="AdditionalSearchNewFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdTfomsSpecified" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MkbCodes" nillable="true" type="tns:ArrayOfCoding" />
+      <xs:element minOccurs="0" name="PrivilegesSpecified" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReferralStatusRange" nillable="true" type="tns:SearchNewFilterRange" />
+      <xs:element minOccurs="0" name="ReferralUpdateRange" nillable="true" type="tns:SearchNewFilterRange" />
+      <xs:element minOccurs="0" name="SourceIdCaseMisSpecified" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TargetIdCaseMisSpecified" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalSearchNewFilter" nillable="true" type="tns:AdditionalSearchNewFilter" />
+  <xs:complexType name="ArrayOfCoding">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Coding" nillable="true" type="tns:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoding" nillable="true" type="tns:ArrayOfCoding" />
+  <xs:complexType name="SearchNewFilterRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchNewFilterRange" nillable="true" type="tns:SearchNewFilterRange" />
+</xs:schema>

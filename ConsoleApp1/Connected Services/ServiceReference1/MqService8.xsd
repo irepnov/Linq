@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto" />
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="MqResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdMq" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="MqReferralStatus" nillable="true" type="q1:Coding" />
+      <xs:element minOccurs="0" name="MqReferralStatusDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MqResult" nillable="true" type="tns:MqResult" />
+  <xs:complexType name="SearchOneDirectionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MqResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QLength" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="Referral" nillable="true" type="q2:Referral" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchOneDirectionResult" nillable="true" type="tns:SearchOneDirectionResult" />
+  <xs:complexType name="SearchManyDirectionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MqResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QLength" type="xs:int" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="Referrals" nillable="true" type="q3:ArrayOfReferral" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchManyDirectionResult" nillable="true" type="tns:SearchManyDirectionResult" />
+  <xs:complexType name="QueueInfoResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveProfiles" nillable="true" type="tns:ArrayOfActiveProfile" />
+      <xs:element minOccurs="0" name="DateReport" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="ProfileMedService" nillable="true" type="q4:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueInfoResult" nillable="true" type="tns:QueueInfoResult" />
+  <xs:complexType name="ArrayOfActiveProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActiveProfile" nillable="true" type="tns:ActiveProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActiveProfile" nillable="true" type="tns:ArrayOfActiveProfile" />
+  <xs:complexType name="ActiveProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="QueueInfos" nillable="true" type="tns:ArrayOfQueueInfo" />
+      <xs:element minOccurs="0" name="Site" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="TargetLpu" nillable="true" type="q5:Coding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActiveProfile" nillable="true" type="tns:ActiveProfile" />
+  <xs:complexType name="ArrayOfQueueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueInfo" nillable="true" type="tns:QueueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueueInfo" nillable="true" type="tns:ArrayOfQueueInfo" />
+  <xs:complexType name="QueueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QDays" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QMaxDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="QlengthStatus1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QlengthStatus2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QlengthStatus3" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QlengthStatus4" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QlengthStatus5" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueInfo" nillable="true" type="tns:QueueInfo" />
+  <xs:complexType name="MqDocResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MqResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsDocProvided" type="xs:boolean" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="ResultDocument" nillable="true" type="q6:ReferralResultDocument" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MqDocResult" nillable="true" type="tns:MqDocResult" />
+  <xs:complexType name="VersionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatabaseVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceVersion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionResult" nillable="true" type="tns:VersionResult" />
+  <xs:complexType name="SearchNewResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QLength" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReferralIds" nillable="true" type="q7:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchNewResult" nillable="true" type="tns:SearchNewResult" />
+  <xs:complexType name="CheckPermissionOnReferralsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckPermissionOnReferralsResult" nillable="true" type="tns:CheckPermissionOnReferralsResult" />
+</xs:schema>

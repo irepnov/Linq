@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto" />
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" />
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.Mpi" />
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.Legacy" />
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Requests" />
+  <xs:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Results" />
+  <xs:element name="UpdateMedServiceProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q1:Credentials" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="profileMedService" nillable="true" type="q2:ProfileMedService" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMedServiceProfileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Register">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q3:Credentials" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q4:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="RegisterResult" nillable="true" type="q5:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFromSourcedMo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q6:Credentials" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q7:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFromSourcedMoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="UpdateFromSourcedMoResult" nillable="true" type="q8:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFromTargetMo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q9:Credentials" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q10:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFromTargetMoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="UpdateFromTargetMoResult" nillable="true" type="q11:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePlannedResource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q12:Credentials" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q13:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePlannedResourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="ChangePlannedResourceResult" nillable="true" type="q14:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HealthCareStart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q15:Credentials" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q16:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HealthCareStartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="HealthCareStartResult" nillable="true" type="q17:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HealthCareEnd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q18:Credentials" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q19:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HealthCareEndResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="HealthCareEndResult" nillable="true" type="q20:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgreedFromSourcedMo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q21:Credentials" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q22:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgreedFromSourcedMoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="AgreedFromSourcedMoResult" nillable="true" type="q23:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgreedFromTargetMo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q24:Credentials" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q25:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgreedFromTargetMoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="AgreedFromTargetMoResult" nillable="true" type="q26:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientDocumentIssue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q27:Credentials" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q28:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatientDocumentIssueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="PatientDocumentIssueResult" nillable="true" type="q29:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Cancellation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q30:Credentials" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q31:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="CancellationResult" nillable="true" type="q32:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOrChangeTargetMo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q33:Credentials" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q34:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOrChangeTargetMoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="SetOrChangeTargetMoResult" nillable="true" type="q35:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchOne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q36:Credentials" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="options" nillable="true" type="q37:Options" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchOneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="SearchOneResult" nillable="true" type="q38:SearchOneDirectionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q39:Credentials" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="options" nillable="true" type="q40:Options" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchManyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="SearchManyResult" nillable="true" type="q41:SearchManyDirectionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateQueues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q42:Credentials" />
+        <xs:element minOccurs="0" name="queryDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateQueuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculateQueuesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueueInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q43:Credentials" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="options" nillable="true" type="q44:Options" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueueInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="GetQueueInfoResult" nillable="true" type="q45:QueueInfoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResultDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q46:Credentials" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="referral" nillable="true" type="q47:Referral" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResultDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="GetResultDocumentResult" nillable="true" type="q48:MqDocResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppointmentNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q49:Credentials" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="notification" nillable="true" type="q50:AppointmentNotification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppointmentNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="AppointmentNotificationResult" nillable="true" type="q51:MqResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="GetVersionResult" nillable="true" type="q52:VersionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReferralsByMpiIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q53:Credentials" />
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="mpiIds" nillable="true" type="q54:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReferralsByMpiIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/MQ.Dto.Mpi" minOccurs="0" name="GetReferralsByMpiIdsResult" nillable="true" type="q55:ArrayOfMpiIds" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q56:Credentials" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="options" nillable="true" type="q57:SearchNewFilter" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="additionalOptions" nillable="true" type="q58:AdditionalSearchNewFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="SearchNewResult" nillable="true" type="q59:SearchNewResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPermissionOnReferrals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q60:Credentials" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="targetLpu" nillable="true" type="q61:Coding" />
+        <xs:element minOccurs="0" name="mpiCardId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPermissionOnReferralsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" minOccurs="0" name="CheckPermissionOnReferralsResult" nillable="true" type="q62:CheckPermissionOnReferralsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutPatientMoveInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q63:Credentials" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/MQ.Dto.Legacy" minOccurs="0" name="info" nillable="true" type="q64:PatientMoveInfo_6_1_1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutPatientMoveInfoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterPARequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q65:Credentials" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Requests" minOccurs="0" name="request" nillable="true" type="q66:RegisterPARequestRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterPARequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Results" minOccurs="0" name="RegisterPARequestResult" nillable="true" type="q67:RegisterPARequestResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelPARequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q68:Credentials" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Requests" minOccurs="0" name="request" nillable="true" type="q69:CancelPARequestRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelPARequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Results" minOccurs="0" name="CancelPARequestResult" nillable="true" type="q70:CancelPARequestResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchActivePARequests">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q71:Credentials" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Requests" minOccurs="0" name="filter" nillable="true" type="q72:SearchActivePARequestsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchActivePARequestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Results" minOccurs="0" name="SearchActivePARequestsResult" nillable="true" type="q73:SearchActivePARequestsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPARequests">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q74:Credentials" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Requests" minOccurs="0" name="filter" nillable="true" type="q75:SearchPARequestsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPARequestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Results" minOccurs="0" name="SearchPARequestsResult" nillable="true" type="q76:SearchPARequestsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCtoPARequests">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/MQ.Dto" minOccurs="0" name="credentials" nillable="true" type="q77:Credentials" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Requests" minOccurs="0" name="filter" nillable="true" type="q78:SearchCtoPARequestsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCtoPARequestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Results" minOccurs="0" name="SearchCtoPARequestsResult" nillable="true" type="q79:SearchCtoPARequestsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

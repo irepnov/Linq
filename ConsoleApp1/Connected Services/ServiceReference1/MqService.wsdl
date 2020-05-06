@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MqService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.Result" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd6" namespace="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.Mpi" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.Legacy" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Requests" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment" />
+      <xsd:import schemaLocation="http://10.0.1.179/MQService/MqService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/MQ.Dto.PostAppointment.Results" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMqService_UpdateMedServiceProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMedServiceProfile" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_UpdateMedServiceProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMedServiceProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_UpdateMedServiceProfile_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q1:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_Register_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q2:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_UpdateFromSourcedMo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFromSourcedMo" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_UpdateFromSourcedMo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFromSourcedMoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_UpdateFromSourcedMo_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q3:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_UpdateFromTargetMo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFromTargetMo" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_UpdateFromTargetMo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFromTargetMoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_UpdateFromTargetMo_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q4:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_ChangePlannedResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePlannedResource" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_ChangePlannedResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePlannedResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_ChangePlannedResource_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q5:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_HealthCareStart_InputMessage">
+    <wsdl:part name="parameters" element="tns:HealthCareStart" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_HealthCareStart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HealthCareStartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_HealthCareStart_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q6:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_HealthCareEnd_InputMessage">
+    <wsdl:part name="parameters" element="tns:HealthCareEnd" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_HealthCareEnd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HealthCareEndResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_HealthCareEnd_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q7:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AgreedFromSourcedMo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgreedFromSourcedMo" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AgreedFromSourcedMo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgreedFromSourcedMoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AgreedFromSourcedMo_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q8:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AgreedFromTargetMo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgreedFromTargetMo" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AgreedFromTargetMo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgreedFromTargetMoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AgreedFromTargetMo_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q9:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_PatientDocumentIssue_InputMessage">
+    <wsdl:part name="parameters" element="tns:PatientDocumentIssue" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_PatientDocumentIssue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PatientDocumentIssueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_PatientDocumentIssue_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q10:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_Cancellation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cancellation" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_Cancellation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancellationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_Cancellation_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q11:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SetOrChangeTargetMo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOrChangeTargetMo" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SetOrChangeTargetMo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOrChangeTargetMoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SetOrChangeTargetMo_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q12:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchOne" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchOne_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q13:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchOne_ValidationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation" name="detail" element="q14:ValidationFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchMany_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMany" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchMany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchManyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchMany_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q15:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CalculateQueues_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateQueues" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CalculateQueues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateQueuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CalculateQueues_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q16:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetQueueInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetQueueInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetQueueInfo_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q17:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetResultDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResultDocument" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetResultDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResultDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetResultDocument_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q18:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AppointmentNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppointmentNotification" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AppointmentNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppointmentNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_AppointmentNotification_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q19:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetVersion_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q20:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetReferralsByMpiIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralsByMpiIds" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetReferralsByMpiIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralsByMpiIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_GetReferralsByMpiIds_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q21:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNew" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchNew_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q22:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CheckPermissionOnReferrals_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPermissionOnReferrals" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CheckPermissionOnReferrals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPermissionOnReferralsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CheckPermissionOnReferrals_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q23:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_PutPatientMoveInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutPatientMoveInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_PutPatientMoveInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutPatientMoveInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_PutPatientMoveInfo_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q24:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_RegisterPARequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPARequest" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_RegisterPARequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPARequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_RegisterPARequest_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q25:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CancelPARequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelPARequest" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CancelPARequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelPARequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_CancelPARequest_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q26:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchActivePARequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchActivePARequests" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchActivePARequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchActivePARequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchActivePARequests_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q27:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchPARequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPARequests" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchPARequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPARequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchPARequests_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q28:MqFault" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchCtoPARequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCtoPARequests" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchCtoPARequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCtoPARequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMqService_SearchCtoPARequests_MqFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/MQ.Dto.Fault" name="detail" element="q29:MqFault" />
+  </wsdl:message>
+  <wsdl:portType name="IMqService">
+    <wsdl:operation name="UpdateMedServiceProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/UpdateMedServiceProfile" message="tns:IMqService_UpdateMedServiceProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/UpdateMedServiceProfileResponse" message="tns:IMqService_UpdateMedServiceProfile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/UpdateMedServiceProfileMqFaultFault" name="MqFaultFault" message="tns:IMqService_UpdateMedServiceProfile_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/Register" message="tns:IMqService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/RegisterResponse" message="tns:IMqService_Register_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/RegisterMqFaultFault" name="MqFaultFault" message="tns:IMqService_Register_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFromSourcedMo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/UpdateFromSourcedMo" message="tns:IMqService_UpdateFromSourcedMo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/UpdateFromSourcedMoResponse" message="tns:IMqService_UpdateFromSourcedMo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/UpdateFromSourcedMoMqFaultFault" name="MqFaultFault" message="tns:IMqService_UpdateFromSourcedMo_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFromTargetMo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/UpdateFromTargetMo" message="tns:IMqService_UpdateFromTargetMo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/UpdateFromTargetMoResponse" message="tns:IMqService_UpdateFromTargetMo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/UpdateFromTargetMoMqFaultFault" name="MqFaultFault" message="tns:IMqService_UpdateFromTargetMo_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePlannedResource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/ChangePlannedResource" message="tns:IMqService_ChangePlannedResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/ChangePlannedResourceResponse" message="tns:IMqService_ChangePlannedResource_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/ChangePlannedResourceMqFaultFault" name="MqFaultFault" message="tns:IMqService_ChangePlannedResource_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthCareStart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/HealthCareStart" message="tns:IMqService_HealthCareStart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/HealthCareStartResponse" message="tns:IMqService_HealthCareStart_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/HealthCareStartMqFaultFault" name="MqFaultFault" message="tns:IMqService_HealthCareStart_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthCareEnd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/HealthCareEnd" message="tns:IMqService_HealthCareEnd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/HealthCareEndResponse" message="tns:IMqService_HealthCareEnd_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/HealthCareEndMqFaultFault" name="MqFaultFault" message="tns:IMqService_HealthCareEnd_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgreedFromSourcedMo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/AgreedFromSourcedMo" message="tns:IMqService_AgreedFromSourcedMo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/AgreedFromSourcedMoResponse" message="tns:IMqService_AgreedFromSourcedMo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/AgreedFromSourcedMoMqFaultFault" name="MqFaultFault" message="tns:IMqService_AgreedFromSourcedMo_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgreedFromTargetMo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/AgreedFromTargetMo" message="tns:IMqService_AgreedFromTargetMo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/AgreedFromTargetMoResponse" message="tns:IMqService_AgreedFromTargetMo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/AgreedFromTargetMoMqFaultFault" name="MqFaultFault" message="tns:IMqService_AgreedFromTargetMo_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientDocumentIssue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/PatientDocumentIssue" message="tns:IMqService_PatientDocumentIssue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/PatientDocumentIssueResponse" message="tns:IMqService_PatientDocumentIssue_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/PatientDocumentIssueMqFaultFault" name="MqFaultFault" message="tns:IMqService_PatientDocumentIssue_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cancellation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/Cancellation" message="tns:IMqService_Cancellation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/CancellationResponse" message="tns:IMqService_Cancellation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/CancellationMqFaultFault" name="MqFaultFault" message="tns:IMqService_Cancellation_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOrChangeTargetMo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/SetOrChangeTargetMo" message="tns:IMqService_SetOrChangeTargetMo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/SetOrChangeTargetMoResponse" message="tns:IMqService_SetOrChangeTargetMo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/SetOrChangeTargetMoMqFaultFault" name="MqFaultFault" message="tns:IMqService_SetOrChangeTargetMo_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/SearchOne" message="tns:IMqService_SearchOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/SearchOneResponse" message="tns:IMqService_SearchOne_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/SearchOneMqFaultFault" name="MqFaultFault" message="tns:IMqService_SearchOne_MqFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/SearchOneValidationFaultFault" name="ValidationFaultFault" message="tns:IMqService_SearchOne_ValidationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/SearchMany" message="tns:IMqService_SearchMany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/SearchManyResponse" message="tns:IMqService_SearchMany_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/SearchManyMqFaultFault" name="MqFaultFault" message="tns:IMqService_SearchMany_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateQueues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/CalculateQueues" message="tns:IMqService_CalculateQueues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/CalculateQueuesResponse" message="tns:IMqService_CalculateQueues_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/CalculateQueuesMqFaultFault" name="MqFaultFault" message="tns:IMqService_CalculateQueues_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/GetQueueInfo" message="tns:IMqService_GetQueueInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/GetQueueInfoResponse" message="tns:IMqService_GetQueueInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/GetQueueInfoMqFaultFault" name="MqFaultFault" message="tns:IMqService_GetQueueInfo_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/GetResultDocument" message="tns:IMqService_GetResultDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/GetResultDocumentResponse" message="tns:IMqService_GetResultDocument_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/GetResultDocumentMqFaultFault" name="MqFaultFault" message="tns:IMqService_GetResultDocument_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppointmentNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/AppointmentNotification" message="tns:IMqService_AppointmentNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/AppointmentNotificationResponse" message="tns:IMqService_AppointmentNotification_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/AppointmentNotificationMqFaultFault" name="MqFaultFault" message="tns:IMqService_AppointmentNotification_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/GetVersion" message="tns:IMqService_GetVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/GetVersionResponse" message="tns:IMqService_GetVersion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/GetVersionMqFaultFault" name="MqFaultFault" message="tns:IMqService_GetVersion_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralsByMpiIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/GetReferralsByMpiIds" message="tns:IMqService_GetReferralsByMpiIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/GetReferralsByMpiIdsResponse" message="tns:IMqService_GetReferralsByMpiIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/GetReferralsByMpiIdsMqFaultFault" name="MqFaultFault" message="tns:IMqService_GetReferralsByMpiIds_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/SearchNew" message="tns:IMqService_SearchNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/SearchNewResponse" message="tns:IMqService_SearchNew_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/SearchNewMqFaultFault" name="MqFaultFault" message="tns:IMqService_SearchNew_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPermissionOnReferrals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/CheckPermissionOnReferrals" message="tns:IMqService_CheckPermissionOnReferrals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/CheckPermissionOnReferralsResponse" message="tns:IMqService_CheckPermissionOnReferrals_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/CheckPermissionOnReferralsMqFaultFault" name="MqFaultFault" message="tns:IMqService_CheckPermissionOnReferrals_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutPatientMoveInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/PutPatientMoveInfo" message="tns:IMqService_PutPatientMoveInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/PutPatientMoveInfoResponse" message="tns:IMqService_PutPatientMoveInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/PutPatientMoveInfoMqFaultFault" name="MqFaultFault" message="tns:IMqService_PutPatientMoveInfo_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPARequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/RegisterPARequest" message="tns:IMqService_RegisterPARequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/RegisterPARequestResponse" message="tns:IMqService_RegisterPARequest_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/RegisterPARequestMqFaultFault" name="MqFaultFault" message="tns:IMqService_RegisterPARequest_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelPARequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/CancelPARequest" message="tns:IMqService_CancelPARequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/CancelPARequestResponse" message="tns:IMqService_CancelPARequest_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/CancelPARequestMqFaultFault" name="MqFaultFault" message="tns:IMqService_CancelPARequest_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchActivePARequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/SearchActivePARequests" message="tns:IMqService_SearchActivePARequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/SearchActivePARequestsResponse" message="tns:IMqService_SearchActivePARequests_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/SearchActivePARequestsMqFaultFault" name="MqFaultFault" message="tns:IMqService_SearchActivePARequests_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPARequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/SearchPARequests" message="tns:IMqService_SearchPARequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/SearchPARequestsResponse" message="tns:IMqService_SearchPARequests_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/SearchPARequestsMqFaultFault" name="MqFaultFault" message="tns:IMqService_SearchPARequests_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCtoPARequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMqService/SearchCtoPARequests" message="tns:IMqService_SearchCtoPARequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMqService/SearchCtoPARequestsResponse" message="tns:IMqService_SearchCtoPARequests_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMqService/SearchCtoPARequestsMqFaultFault" name="MqFaultFault" message="tns:IMqService_SearchCtoPARequests_MqFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMqService" type="tns:IMqService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateMedServiceProfile">
+      <soap:operation soapAction="http://tempuri.org/IMqService/UpdateMedServiceProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/IMqService/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFromSourcedMo">
+      <soap:operation soapAction="http://tempuri.org/IMqService/UpdateFromSourcedMo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFromTargetMo">
+      <soap:operation soapAction="http://tempuri.org/IMqService/UpdateFromTargetMo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePlannedResource">
+      <soap:operation soapAction="http://tempuri.org/IMqService/ChangePlannedResource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCareStart">
+      <soap:operation soapAction="http://tempuri.org/IMqService/HealthCareStart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCareEnd">
+      <soap:operation soapAction="http://tempuri.org/IMqService/HealthCareEnd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AgreedFromSourcedMo">
+      <soap:operation soapAction="http://tempuri.org/IMqService/AgreedFromSourcedMo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AgreedFromTargetMo">
+      <soap:operation soapAction="http://tempuri.org/IMqService/AgreedFromTargetMo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PatientDocumentIssue">
+      <soap:operation soapAction="http://tempuri.org/IMqService/PatientDocumentIssue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Cancellation">
+      <soap:operation soapAction="http://tempuri.org/IMqService/Cancellation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetOrChangeTargetMo">
+      <soap:operation soapAction="http://tempuri.org/IMqService/SetOrChangeTargetMo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOne">
+      <soap:operation soapAction="http://tempuri.org/IMqService/SearchOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultFault">
+        <soap:fault use="literal" name="ValidationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMany">
+      <soap:operation soapAction="http://tempuri.org/IMqService/SearchMany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateQueues">
+      <soap:operation soapAction="http://tempuri.org/IMqService/CalculateQueues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueInfo">
+      <soap:operation soapAction="http://tempuri.org/IMqService/GetQueueInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultDocument">
+      <soap:operation soapAction="http://tempuri.org/IMqService/GetResultDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AppointmentNotification">
+      <soap:operation soapAction="http://tempuri.org/IMqService/AppointmentNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <soap:operation soapAction="http://tempuri.org/IMqService/GetVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralsByMpiIds">
+      <soap:operation soapAction="http://tempuri.org/IMqService/GetReferralsByMpiIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchNew">
+      <soap:operation soapAction="http://tempuri.org/IMqService/SearchNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPermissionOnReferrals">
+      <soap:operation soapAction="http://tempuri.org/IMqService/CheckPermissionOnReferrals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutPatientMoveInfo">
+      <soap:operation soapAction="http://tempuri.org/IMqService/PutPatientMoveInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPARequest">
+      <soap:operation soapAction="http://tempuri.org/IMqService/RegisterPARequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelPARequest">
+      <soap:operation soapAction="http://tempuri.org/IMqService/CancelPARequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchActivePARequests">
+      <soap:operation soapAction="http://tempuri.org/IMqService/SearchActivePARequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPARequests">
+      <soap:operation soapAction="http://tempuri.org/IMqService/SearchPARequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCtoPARequests">
+      <soap:operation soapAction="http://tempuri.org/IMqService/SearchCtoPARequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MqFaultFault">
+        <soap:fault use="literal" name="MqFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MqService">
+    <wsdl:port name="BasicHttpBinding_IMqService" binding="tns:BasicHttpBinding_IMqService">
+      <soap:address location="http://10.0.1.179/MQService/MqService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

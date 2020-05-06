@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1d7170e3-956c-415b-9b96-8bc7dc8dde3c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.0.1.179/MQService/MqService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MqService.xsd" MetadataType="Schema" ID="3ce0b73f-fabf-42c0-b81b-56e5b62ce074" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd11" />
+    <MetadataFile FileName="MqService1.xsd" MetadataType="Schema" ID="c46ed298-0125-4df3-a9d0-9f028bb5ef7a" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MqService2.xsd" MetadataType="Schema" ID="8f1a115c-104e-439c-8163-256784d14a1f" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd7" />
+    <MetadataFile FileName="MqService3.xsd" MetadataType="Schema" ID="fd43f7aa-406b-4405-ac99-7860ad8c8259" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd10" />
+    <MetadataFile FileName="MqService4.xsd" MetadataType="Schema" ID="89ae83f8-8010-4e5f-b5d5-411bdf60d0d5" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MqService5.xsd" MetadataType="Schema" ID="b5037c8e-dddf-40c5-8db2-a803fb54c5c5" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MqService6.xsd" MetadataType="Schema" ID="404bc7cf-cd86-479b-be49-539afa1d55fa" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd8" />
+    <MetadataFile FileName="MqService7.xsd" MetadataType="Schema" ID="8dc26b70-01e7-4909-bcad-ffa74bf71bc0" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MqService8.xsd" MetadataType="Schema" ID="1eb12478-5037-4663-940c-441399761ae3" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd5" />
+    <MetadataFile FileName="MqService.wsdl" MetadataType="Wsdl" ID="7f577c21-b500-4cd0-897f-dc9dfa0d6ed0" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?wsdl" />
+    <MetadataFile FileName="MqService9.xsd" MetadataType="Schema" ID="aa2c424e-a92b-4fe7-a314-186549c50e7c" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd12" />
+    <MetadataFile FileName="MqService10.xsd" MetadataType="Schema" ID="9ecb58bb-6b7e-4826-891d-4ba66db8a320" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MqService11.xsd" MetadataType="Schema" ID="52d834bb-5447-4853-958e-8c9331dda4a4" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd6" />
+    <MetadataFile FileName="MqService12.xsd" MetadataType="Schema" ID="29cd065c-3a40-41e0-b25c-55bbd613e86a" SourceId="1" SourceUrl="http://10.0.1.179/MQService/MqService.svc?xsd=xsd9" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
