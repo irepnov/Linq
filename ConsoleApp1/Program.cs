@@ -38,7 +38,88 @@ namespace ConsoleApp1
         public string fullname;
     }
 
-    
+
+    struct User
+    {
+        public string name;
+        public int age;
+        public User(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+        public void DisplayInfo()
+        {
+            Console.WriteLine($"Name: {name}  Age: {age}");
+        }
+    }
+
+    class Person
+    {
+        public string Name { get; set; }
+        public Person(string name)
+        {
+            Name = name;
+        }
+        public virtual void Display()
+        {
+            Console.WriteLine(Name);
+        }
+    }
+    class Employee : Person
+    {
+        public string Company { get; set; }
+        public Employee(string name, string company)
+            : base(name)
+        {
+            Company = company;
+        }
+
+        public override void Display()
+        {
+            Console.WriteLine($"{Name} работает в {Company}");
+        }
+
+        public void Display2()
+        {
+            Console.WriteLine(Name);
+        }
+    }
+
+
+    interface IAccount
+    {
+        int CurrentSum { get; }  // Текущая сумма на счету
+        void Put(int sum);      // Положить деньги на счет
+        void Withdraw(int sum); // Взять со счета
+    }
+    interface IClient
+    {
+        string Name { get; set; }
+    }
+    class Client : IAccount, IClient
+    {
+        int _sum; // Переменная для хранения суммы
+        public string Name { get; set; }
+        public Client(string name, int sum)
+        {
+            Name = name;
+            _sum = sum;
+        }
+
+        public int CurrentSum { get { return _sum; } }
+
+        public void Put(int sum) { _sum += sum; Console.WriteLine(_sum); }
+
+        public void Withdraw(int sum)
+        {
+            if (_sum >= sum)
+            {
+                _sum -= sum;
+            }
+        }
+    }
+
     [XmlRoot("Objects")]
     [XmlInclude(typeof(Parent))]
     [XmlInclude(typeof(Child))]
@@ -126,6 +207,16 @@ namespace ConsoleApp1
 
         public static void Main(string[] args)
         {
+            Client client = new Client("Tom", 200);
+            client.Put(30);
+
+            Person p = new Employee("name1", "comp1") { Company = "comp", Name = "name " };
+            p.Display();
+
+            User r = new User();
+            r.DisplayInfo();
+
+
             Program test = new Program();
             test.SerializeObject("TypeDoc.xml");
             test.DeserializeObject("TypeDoc.xml");
