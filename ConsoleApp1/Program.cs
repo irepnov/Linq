@@ -38,7 +38,19 @@ namespace ConsoleApp1
         public string fullname;
     }
 
-
+    public class TestStatic
+    {
+        public static string Name;
+        public string Fam;
+        static TestStatic()
+        {
+            Console.WriteLine("TestTatic static");
+        }
+        public TestStatic()
+        {
+            Console.WriteLine("TestTatic non static");
+        }
+    }
     struct User
     {
         public string name;
@@ -207,6 +219,9 @@ namespace ConsoleApp1
 
         public static void Main(string[] args)
         {
+            string t = TestStatic.Name;
+            TestStatic tt = new TestStatic();
+
             Client client = new Client("Tom", 200);
             client.Put(30);
 
